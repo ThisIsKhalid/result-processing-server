@@ -1,5 +1,5 @@
-import { MongoClient, ServerApiVersion } from "mongodb";
 import dotenv from "dotenv";
+import { MongoClient, ServerApiVersion } from "mongodb";
 
 dotenv.config();
 
@@ -16,6 +16,7 @@ export let db;
 export let Results;
 export let Courses;
 export let Users;
+export let Students;
 
 export const connectToDatabase = async () => {
   try {
@@ -25,6 +26,7 @@ export const connectToDatabase = async () => {
     Results = db.collection("results");
     Courses = db.collection("courses");
     Users = db.collection("users");
+    Students = db.collection("students");
   } catch (error) {
     console.error("Error connecting to MongoDB:", error);
     process.exit(1); // Exit the process with a non-zero code
