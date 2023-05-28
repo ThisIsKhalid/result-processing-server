@@ -17,6 +17,7 @@ export let Results;
 export let Courses;
 export let Users;
 export let Students;
+export let Teachers;
 
 export const connectToDatabase = async () => {
   try {
@@ -27,6 +28,7 @@ export const connectToDatabase = async () => {
     Courses = db.collection("courses");
     Users = db.collection("users");
     Students = db.collection("students");
+    Teachers = db.collection("teachers");
   } catch (error) {
     console.error("Error connecting to MongoDB:", error);
     process.exit(1); // Exit the process with a non-zero code
